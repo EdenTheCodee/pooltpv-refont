@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  .swiper-button-prev-custom {
+    margin-left: -7rem !important;
+  }
+  .swiper-button-next-custom {
+    margin-right: -7rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .swiper-button-prev-custom {
+    margin-left: 0 !important;
+  }
+  .swiper-button-next-custom {
+    margin-right: 0 !important;
+  }
+}
