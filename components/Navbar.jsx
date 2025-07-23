@@ -28,25 +28,25 @@ const Navbar = () => {
       >
         <ul>
           <a href="#top" className="no-underline ms-auto font-bold text-black">
-            <h2>Sahil Enterprises</h2>
+            <h2>POOL TPV</h2>
           </a>
         </ul>
         <ul
           className="hidden md:flex items-center gap-6 lg:gap-8 px-12 py-3 bg-white"
         >
           <li>
-            <a href='/' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Home</a>
+            <a href='/' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Accueil</a>
           </li>
           <li>
-            <a href='#about' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>About us</a>
+            <a href='#about' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>A propos</a>
           </li>
           <li>
             <a href='#work' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>
-              Product and Services
+              Missions et ambitions
             </a>
           </li>
           <li>
-            <a href='#contact' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Contact us</a>
+            <a href='#contact' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Contacts</a>
           </li>
           <li>
             <a href="/sahil-enterprises.pdf" download className="bg-forest-green text-white font-semibold py-2.5 px-4 rounded no-underline">Brouchure</a>
@@ -64,13 +64,13 @@ const Navbar = () => {
               <RxCross1 size={28} />
             </button>
             <li>
-              <a href='/' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Home</a>
+              <a href='/' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Accueil</a>
             </li>
             <li>
-              <a href='#about' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>About us</a>
+              <a href='#about' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>A propos</a>
             </li>
             <li>
-              <a href='#work' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Product and Services</a>
+              <a href='#work' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Missions et ambitions</a>
             </li>
             <li>
               <a href='#contact' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Contact us</a>

@@ -4,14 +4,14 @@ const Header = () => {
   return (
     <div
       id="top"
-      className="mt-24 bg-forest-green py-16 flex flex-col items-center justify-center text-center"
+      className="mt-24 bg-[#451E0A] py-16 flex flex-col items-center justify-center text-center"
     >
       <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
-        Welcome to{" "}
-        <span className="text-golden animate-pulse">Sahil Enterprises</span>
-      </h1>
+  <span className="inline-block text-yellow-400 animate-bounce">POOL TPV</span>
+</h1>
+
       <h2 className="text-xl md:text-2xl text-white mb-6 font-semibold">
-        Official Website
+      <span className="inline-block text-yellow-400 animate-pulse "> Site officiel </span>
       </h2>
       <p className="text-white max-w-xl mb-8">
         Your one-stop solution for all business needs.
