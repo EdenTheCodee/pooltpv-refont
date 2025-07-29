@@ -5,7 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import ProductandServices from "@/components/ProductandServices";
+import Actuality from "@/components/Actuality";
+
 export default function Home() {
  return (
     <> 
@@ -13,11 +14,13 @@ export default function Home() {
       
       <Header/>
       <About/>
-      <ProductandServices/>
+      <Navbar/>
       <Contact/>
-        
+      <Actuality/> 
       </>
   
   
  )
+ 
 }
+

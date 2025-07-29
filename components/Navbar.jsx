@@ -1,90 +1,123 @@
-'use client'
-import Image from 'next/image'
+'use client';
+import Image from 'next/image';
 import '/app/globals.css';
-import { CiMenuFries } from "react-icons/ci";
-import { RxCross1 } from "react-icons/rx";
-import { useState, useEffect } from 'react';
+import { CiMenuFries } from 'react-icons/ci';
+import { RxCross1 } from 'react-icons/rx';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
-const Navbar = () => {
-  const [isScroll, setIsScroll] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+const menuItems = [
+  { name: 'ACCUEIL', href: '/' },
+  {
+    name: 'À PROPOS', 
+    subItems: [
+      { name: 'Définition', href: '#about' },
+      { name: 'Historique de création', href: '#creationhistory' },
+      { name: 'Mission et ambitions', href: '#missionAmbitions' },
+    ],
+  },
+  { name: 'NOS MEMBRES' , href: '#members' },
+  {
+    name: 'ACTUALITES', 
+    subItems: [
+      { name: 'EVENEMENTS', href: '#EVENTS' },
+      { name: "APPEL D'OFFRES", href: '#appelOffre' },
+    ],
+  },
+  { name: 'CONTACTS', href: '#CONTACTS' },
+];
 
+export default function Navbar() {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const navRef = useRef(null);
+
+  // Ferme le menu déroulant quand on clique à l'extérieur
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) setIsScroll(true);
-      else setIsScroll(false);
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setOpenDropdown(null);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Fonction pour gérer le clic sur les éléments avec dropdown
+  const handleDropdownClick = (index, event) => {
+    event.preventDefault();
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
   return (
-    
-  <div className='bg-white z-50'>
-    <div className='fixed top-0 right-0 w-full z-50'>
-      <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 
-          flex items-center justify-between z-50 bg-white ${isScroll ? "shadow-sm" : ""}`}
-      >
-        <ul>
-          <a href="#top" className="no-underline ms-auto font-bold text-black">
-            <h2>POOL TPV</h2>
+    <nav className="bg-white shadow-md z-50 w-full px-8 py-2 fixed top-0" ref={navRef}>
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+        {/* Logo + texte */}
+        <div className="flex items-center gap-4">
+          {/* Logo */}
+          <div className="relative w-20 h-20">
+            <Image
+              src="/images/logo-pooltpv.png"
+              alt="Logo Pool TPV"
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Trait vertical */}
+          <div className="w-px h-8 bg-gray-300" />
+
+          {/* Texte dégradé */}
+          <a href="/" className="text-xl font-bold no-underline flex gap-0.5">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-500">P</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-800 to-gray-400">O</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-700 to-gray-300">O</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 to-gray-200">L</span>
+            <span className="mx-1" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-500 to-gray-300">T</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-600 to-gray-400">P</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-gray-700 to-gray-500">V</span>
           </a>
-        </ul>
-        <ul
-          className="hidden md:flex items-center gap-6 lg:gap-8 px-12 py-3 bg-white"
-        >
-          <li>
-            <a href='/' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Accueil</a>
-          </li>
-          <li>
-            <a href='#about' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>A propos</a>
-          </li>
-          <li>
-            <a href='#work' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>
-              Missions et ambitions
-            </a>
-          </li>
-          <li>
-            <a href='#contact' className='text-black no-underline border-b-0 hover:border-b-4 hover:border-forest-green transition'>Contacts</a>
-          </li>
-          <li>
-            <a href="/sahil-enterprises.pdf" download className="bg-forest-green text-white font-semibold py-2.5 px-4 rounded no-underline">Brouchure</a>
-          </li>
-        </ul>
-        
-   
+        </div>
 
-          {/* Mobile menu */}
-          <ul
-            className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen transition-transform duration-500 bg-forest-green text-white
-              ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          >
-            <button className='absolute right-6 top-6 cursor-pointer' onClick={() => setMenuOpen(false)}>
-              <RxCross1 size={28} />
-            </button>
-            <li>
-              <a href='/' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Accueil</a>
+        {/* Navigation */}
+        <ul className="hidden md:flex gap-8 items-center">
+          {menuItems.map((item, index) => (
+            <li key={index} className="relative group">
+              <a
+                href={item.href || '#'}
+                className="text-black font-medium no-underline flex items-center gap-1 hover:text-forest-green transition cursor-pointer"
+                onClick={item.subItems ? (e) => handleDropdownClick(index, e) : undefined}
+              >
+                {item.name}
+                {item.subItems && (
+                  <ChevronDownIcon 
+                    className={`w-4 h-4 mt-1 transition-transform ${
+                      openDropdown === index ? 'rotate-180' : ''
+                    }`} 
+                  />
+                )}
+              </a>
+
+              {item.subItems && openDropdown === index && (
+                <ul className="absolute left-0 mt-2 bg-white shadow-lg rounded-md py-2 w-48 z-10 px-0">
+                  {item.subItems.map((sub, subIndex) => (
+                    <li key={subIndex}>
+                      <a
+                        href={sub.href}
+                        className="block w-full py-2 text-sm text-black hover:bg-gray-100 rounded-md no-underline transition-colors text-center"
+                        onClick={() => setOpenDropdown(null)} // Ferme le dropdown après clic sur un sous-élément
+                      >
+                        {sub.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
-            <li>
-              <a href='#about' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>A propos</a>
-            </li>
-            <li>
-              <a href='#work' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Missions et ambitions</a>
-            </li>
-            <li>
-              <a href='#contact' className="text-white no-underline border-b-0 hover:border-b-4 hover:border-white transition" onClick={() => setMenuOpen(false)}>Contact us</a>
-            </li>
-          </ul>
-          {!menuOpen && (
-            <button className='block md:hidden ml-3 text-forest-green' onClick={() => setMenuOpen(true)}>
-              <CiMenuFries size={32} />
-            </button>
-          )}
-        </nav>
+          ))}
+        </ul>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
-
-export default Navbar

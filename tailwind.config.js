@@ -12,11 +12,7 @@ module.exports = {
         'auto':'repeat(auto-fit,minmax(200px,1fr))'
       }
    },
-   colors: 
-    { 'forest-green': '#1c594b' ,
-      'golden' :'#e0b407',
-    },
-    
+  
    
   },
   
