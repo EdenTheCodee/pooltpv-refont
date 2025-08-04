@@ -1,8 +1,8 @@
 const routes = {
-    home: '/pages/home',
-    contact: '/pages/contact',
-    about: '/pages/about', // Updated to point to pages folder
-    services: '/pages/services', // Updated to point to pages folder
+    home: '/home',
+    contact: '/contact',
+    about: '/about',
+    services: '/services',
 };
 
 export default routes;
