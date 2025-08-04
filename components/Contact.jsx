@@ -1,18 +1,18 @@
 export default function PoolTPVSection() {
   return (
-    <section className="bg-white text-black py-20 px-6">
+    <section className="bg-black text-white py-20 px-6">
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* Titre principal */}
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
             Pool TPV : Structurer et Moderniser le Transport Public
           </h2>
           <div className="w-24 h-1 bg-[#8B4513] mx-auto rounded-full"></div>
         </div>
 
         {/* Description d’introduction */}
-        <div className="max-w-3xl mx-auto text-center text-gray-700 text-lg">
+        <div className="max-w-3xl mx-auto text-center text-white text-lg">
           <p>
             Le Pool Transports Publics de Voyageurs, un Groupement d'Intérêt Économique (GIE), agit comme levier de régulation et de modernisation du transport collectif en Côte d’Ivoire.
           </p>

@@ -24,24 +24,13 @@ function About() {
       {/* Layout avec image à gauche et blocs de texte à droite */}
       <div className="flex flex-col lg:flex-row items-start gap-12">
         
-        {/* Image à gauche */}
-        <div className="flex-shrink-0 w-full lg:w-96">
-          <Image
+        {/* Image à gauche - version simplifiée */}
+        <div className="flex-shrink-0 w-full py-10 lg:w-[600px]">
+          <img
             src="/images/traffic.jpg"
             alt="Circulation - Pool TPV"
-            width={400}
-            height={300}
             className="rounded-xl object-cover w-full h-auto"
-            priority
-            onError={(e) => {
-              console.log('Erreur de chargement image:', e);
-              e.target.style.display = 'none';
-            }}
           />
-          {/* Image de fallback si l'image principale ne charge pas */}
-          <div className="bg-gray-800 rounded-xl w-full h-64 flex items-center justify-center text-white lg:hidden">
-            <span>Image en cours de chargement...</span>
-          </div>
         </div>
         
         {/* Deux blocs de texte à droite */}

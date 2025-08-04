@@ -24,12 +24,17 @@ function Actuality() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
-      <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-5xl w-full">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="bg-black rounded-3xl shadow-2xl p-8 max-w-5xl w-full">
+        <h2 className="text-3xl font-bold text-center mb-6 text-white">
           Nos Partenaires
         </h2>
-
+        
+        {/* Trait marron centré */}
+        <div className="flex justify-center mb-10">
+          <div className="w-24 h-1 bg-[#8B4513] rounded-full"></div>
+        </div>
+        
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {logos.map((logo) => (
             <div
@@ -37,7 +42,7 @@ function Actuality() {
               className="flex items-center justify-center transition-transform duration-300 hover:scale-110 cursor-pointer"
             >
               {logo.src ? (
-                <div className="w-20 h-20 relative rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <div className="w-20 h-20 relative rounded-full overflow-hidden border-4 border-[#442108] shadow-lg">
                   <Image
                     src={logo.src}
                     alt={logo.name}
