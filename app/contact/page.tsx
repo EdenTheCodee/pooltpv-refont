@@ -193,9 +193,9 @@ export default function Contact() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
                 <option value="">Sélectionnez un sujet</option>
-                <option value="adhesion">Demande d'adhésion</option>
+                <option value="adhesion">Demande d&apos;adhésion</option>
                 <option value="partenariat">Partenariat</option>
-                <option value="information">Demande d'information</option>
+                <option value="information">Demande d&apos;information</option>
                 <option value="collaboration">Collaboration</option>
                 <option value="autre">Autre</option>
               </select>
@@ -225,7 +225,7 @@ export default function Contact() {
 
             {submitStatus === 'error' && (
               <div className="bg-red-100 border border-red-400 text-red-700 rounded-md p-4 font-semibold">
-                ✗ Une erreur s'est produite. Veuillez réessayer.
+                ✗ Une erreur s&apos;est produite. Veuillez réessayer.
               </div>
             )}
 
