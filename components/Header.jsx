@@ -94,23 +94,23 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Flèches de navigation */}
+      {/* Flèches de navigation - Responsive */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 text-white p-4 rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl"
+        className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 text-white p-2 md:p-4 rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl"
         aria-label="Image précédente"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+        <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 text-white p-4 rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl"
+        className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/10 backdrop-blur-lg border border-white/20 text-white p-2 md:p-4 rounded-full hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl"
         aria-label="Image suivante"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+        <svg className="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
@@ -118,7 +118,7 @@ export default function Hero() {
       {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
 
-  \    {/* Contenu textuel avec effet typewriter */}
+      {/* Contenu textuel avec effet typewriter */}
       <div className="relative z-20 text-center text-white space-y-4 px-4">
         {/* Titre avec effet typewriter */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight min-h-[4rem] md:min-h-[6rem] flex items-center justify-center">
