@@ -5,37 +5,20 @@ import { useState, useEffect, useRef } from 'react';
 import ModalContact from './ModalContact'; 
 import { useRouter } from 'next/navigation';
 
-
 const menuItems = [
   { name: 'ACCUEIL', href: '/' },
-  {
-    name: 'À PROPOS',
-    subItems: [
-      { name: 'Définition', href: '#about' },
-      { name: 'Historique de création', href: '#creationhistory' },
-      { name: 'Mission et ambitions', href: '#missionAmbitions' },
-    ],
-  },
-  { name: 'NOS MEMBRES', href: '#members' },
-  {
-    name: 'ACTUALITES',
-    subItems: [
-      { name: 'EVENEMENTS', href: '#EVENTS' },
-      { name: "APPEL D'OFFRES", href: '#appelOffre' },
-    ],
-  },
-  {
-    name: 'CONTACTS',
-    href: '/contact',
-  },
+  { name: 'À PROPOS', href: 'About'  },
+  { name: 'NOS MEMBRES', href: 'membre' },
+  { name: 'ACTUALITES', href: 'actualite' },
+  {name: 'CONTACTS',href: 'contact',},
 ];
 
 export default function Navbar() {
-  const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const navRef = useRef(null);
+  const router = useRouter(); // Always call useRouter unconditionally
 
   useEffect(() => {
     setIsMounted(true); // Set mounted state after component mounts
@@ -59,10 +42,10 @@ export default function Navbar() {
 
   const handleContactClick = (e) => {
     e.preventDefault();
-    if (isMounted) {
+    if (isMounted && router) {
       router.push('/contact');
     } else {
-      setIsContactOpen(true); // Fallback to modal if component isn't mounted
+      setIsContactOpen(true); // Fallback to modal if router isn't ready
     }
   };
 

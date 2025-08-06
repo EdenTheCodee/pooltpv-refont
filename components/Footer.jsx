@@ -57,12 +57,12 @@ const Footer = () => {
               <h4 className="text-xl font-semibold mb-4 text-left w-full">À propos</h4>
               <ul className="space-y-2 text-sm w-full">
                 <li className="text-left">
-                  <a href="#contact" className="text-white no-underline hover:text-gray-300 transition-colors">
+                  <a href="About" className="text-white no-underline hover:text-gray-300 transition-colors">
                     Présentation
                   </a>
                 </li>
                 <li className="text-left">
-                  <a href="#" className="text-white no-underline hover:text-gray-300 transition-colors">
+                  <a href="About" className="text-white no-underline hover:text-gray-300 transition-colors">
                     Historique de création
                   </a>
                 </li>

@@ -118,7 +118,7 @@ export default function Hero() {
       {/* Overlay sombre */}
       <div className="absolute inset-0 bg-black bg-opacity-50 z-10" />
 
-      {/* Contenu textuel avec effet typewriter */}
+  \    {/* Contenu textuel avec effet typewriter */}
       <div className="relative z-20 text-center text-white space-y-4 px-4">
         {/* Titre avec effet typewriter */}
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight min-h-[4rem] md:min-h-[6rem] flex items-center justify-center">
@@ -147,13 +147,13 @@ export default function Hero() {
             : 'translate-y-10 opacity-0 scale-95'
         }`}>
           <a
-            href="#about"
+            href="About"
             className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-lg shadow-md  hover:text-forest-green hover:border-white transition-all duration-300 font-semibold no-underline hover:scale-105 hover:shadow-xl"
           >
             Découvrir
           </a>
           <a
-            href="#contact"
+            href="contact"
             className="bg-white text-black px-8 py-3 rounded-md shadow hover:bg-forest-green hover:text-white transition-all duration-300 font-semibold no-underline hover:scale-105 hover:shadow-lg"
           >
             Nous contacter
