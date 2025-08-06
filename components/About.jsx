@@ -1,71 +1,67 @@
-import React from 'react'
+'use client';
+import React from 'react';
+import Image from 'next/image'; 
 
 function About() {
   return (
-    <div id='about' className='w-full px-[12%] text-center py-10 scroll-mt-5 bg-white'>
-      <h2 className="text-3xl md:text-4xl font-bold  mb-4 tracking-tight drop-shadow-sm">
-        About Us
+    <div id="about" className="w-full px-[8%] py-16 bg-black scroll-mt-20">
+      
+      {/* Bande noire défilante */}
+      <div className="w-full bg-[#442108] py-2 overflow-hidden mb-10">
+        <div className="animate-marquee whitespace-nowrap text-white text-center text-sm md:text-base font-semibold tracking-wide">
+          {Array(4).fill(0).map((_, i) => (
+            <span key={i} className="inline-block mx-4">
+              POOL TPV – Pool Transports Publics de Voyageurs
+            </span>
+          ))}
+        </div>
+      </div>
+      
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight text-white">
+        À propos de nous
       </h2>
-      <div className='mt-6'>
-        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-          Established as a Proprietor firm in the year 2022, we <span className="font-semibold text-forest-green">“Sahil Enterprises”</span> are a leading Trader - Retailer of a wide range of HDPE Scrap, HDPE Drum, etc.<br />
-          Sahil Enterprises is a trusted name in the trading of high-quality HDPE Scrap, HDPE Drums, and related plastic waste materials, catering to a wide range of industrial and recycling needs.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div className="flex items-center justify-center gap-4 bg-forest-green/5 rounded-xl p-5 shadow hover:shadow-lg transition">
-            <span className="flex items-center justify-center rounded-full bg-forest-green text-white w-16 h-16 text-3xl shadow">
-              <i className="fa-solid fa-hand-holding-dollar"></i>
-            </span>
-            <div className="flex flex-col items-start">
-              <p className="font-bold text-forest-green">Nature of Business</p>
-              <p>Trader - Retailer</p>
-            </div>
+      
+      {/* Layout avec image à gauche et blocs de texte à droite */}
+      <div className="flex flex-col lg:flex-row items-start gap-12">
+        
+        {/* Image à gauche - version simplifiée */}
+        <div className="flex-shrink-0 w-full py-10 lg:w-[600px]">
+          <img
+            src="/images/traffic.jpg"
+            alt="Circulation - Pool TPV"
+            className="rounded-xl object-cover w-full h-auto"
+          />
+        </div>
+        
+        {/* Deux blocs de texte à droite */}
+        <div className="flex-1 space-y-8">
+          
+          {/* Premier bloc de texte */}
+          <div className="text-white text-lg leading-relaxed space-y-4">
+            <p>
+              Créé sous la forme d'un Groupement d'Intérêt Économique (GIE), <span className="font-semibold text-[#8B4513]">le Pool Transports Publics de Voyageurs</span> (Pool TPV) incarne une vision solidaire et structurée du secteur du transport public.
+            </p>
+            <p>
+              Ce système favorise une souscription centralisée, avec la délivrance d'attestations spéciales Pool TPV, dont l'organisme reste le seul propriétaire et distributeur officiel.
+            </p>
           </div>
-
-          <div className="flex items-center justify-center gap-4 bg-forest-green/5 rounded-xl p-5 shadow hover:shadow-lg transition">
-            <span className="flex items-center justify-center rounded-full bg-forest-green text-white w-16 h-16 text-3xl shadow">
-              <i className="fa-solid fa-scale-balanced"></i>
-            </span>
-            <div className="flex flex-col items-start">
-              <p className="font-bold text-forest-green">Legal Status of Firm</p>
-              <p>Proprietorship</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 bg-forest-green/5 rounded-xl p-5 shadow hover:shadow-lg transition">
-            <span className="flex items-center justify-center rounded-full bg-forest-green text-white w-16 h-16 text-3xl shadow">
-              <i className="fa-solid fa-arrow-trend-up"></i>
-            </span>
-            <div className="flex flex-col items-start">
-              <p className="font-bold text-forest-green">Annual Turnover</p>
-              <p>0-40L</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 bg-forest-green/5 rounded-xl p-5 shadow hover:shadow-lg transition">
-            <span className="flex items-center justify-center rounded-full bg-forest-green text-white w-16 h-16 text-3xl shadow">
-              <i className="fa-solid fa-calendar"></i>
-            </span>
-            <div className="flex flex-col items-start">
-              <p className="font-bold text-forest-green">GST Registration Date</p>
-              <p>21-Nov-2022</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center gap-4 bg-forest-green/5 rounded-xl p-5 shadow hover:shadow-lg transition">
-            <span className="flex items-center justify-center rounded-full bg-forest-green text-white w-16 h-16 text-3xl shadow">
-              <i className="fa-solid fa-file"></i>
-            </span>
-            <div className="flex flex-col items-start">
-              <p className="font-bold text-forest-green">GST Number</p>
-              <p>06MLAPK5607G1Z3</p>
-            </div>
+          
+          {/* Ligne de séparation */}
+          <div className="w-1/2 h-1 bg-[#8B4513]/50 rounded-full"></div>
+          
+          {/* Deuxième bloc de texte */}
+          <div className="text-white text-lg leading-relaxed space-y-4">
+            <p>
+              Les attestations sont diffusées à travers les compagnies d'assurances partenaires ainsi que les bureaux propres du Pool TPV, assurant ainsi un contrôle rigoureux et une distribution homogène sur l'ensemble du territoire.
+            </p>
+            <p>
+              En unissant les acteurs du secteur, le Pool TPV se positionne comme un pilier stratégique de la régulation et de la modernisation du transport public de voyageurs.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;
