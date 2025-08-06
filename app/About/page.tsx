@@ -37,7 +37,7 @@ const AboutPage: React.FC = () => {
         {/* Contenu en relatif pour être au-dessus de l'overlay */}
         <div className="relative max-w-6xl mx-auto px-6 text-center">
           <div className="inline-block px-4 py-2 bg-white/10 rounded-lg text-white text-sm mb-6">
-            Groupement d'Intérêt Économique
+            Groupement d&apos;Intérêt Économique
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Pool Transports Publics de Voyageurs
@@ -59,17 +59,17 @@ const AboutPage: React.FC = () => {
               </h2>
               <div className="prose prose-lg text-gray-700">
                 <p>
-                  Créé sous la forme d'un <strong>Groupement d'Intérêt Économique (GIE)</strong>, 
+                  Créé sous la forme d&apos;un <strong>Groupement d&apos;Intérêt Économique (GIE)</strong>, 
                   le Pool TPV incarne une vision solidaire et structurée du secteur du transport public.
                 </p>
                 <p>
-                  Ce système favorise une souscription centralisée, avec la délivrance d'attestations 
-                  spéciales Pool TPV, dont l'organisme reste le seul propriétaire et distributeur officiel.
+                  Ce système favorise une souscription centralisée, avec la délivrance d&apos;attestations 
+                  spéciales Pool TPV, dont l&apos;organisme reste le seul propriétaire et distributeur officiel.
                 </p>
                 <p>
-                  Les attestations sont diffusées à travers les compagnies d'assurances partenaires 
+                  Les attestations sont diffusées à travers les compagnies d&apos;assurances partenaires 
                   ainsi que les bureaux propres du Pool TPV, assurant ainsi un contrôle rigoureux 
-                  et une distribution homogène sur l'ensemble du territoire.
+                  et une distribution homogène sur l&apos;ensemble du territoire.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ const AboutPage: React.FC = () => {
               Nos Services
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Un système complet pour garantir l'excellence du transport public
+              Un système complet pour garantir l&apos;excellence du transport public
             </p>
           </div>
 
@@ -190,7 +190,7 @@ const AboutPage: React.FC = () => {
             <h2 className="text-3xl font-bold mb-4">Rejoignez le Pool TPV</h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Participez à la modernisation du transport public et bénéficiez 
-              d'un système d'assurance solidaire et structuré.
+              d&apos;un système d&apos;assurance solidaire et structuré.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-gray-900 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
