@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import { useState, useEffect, useRef } from 'react';
 import ModalContact from './ModalContact'; 
 import { useRouter } from 'next/navigation';
@@ -17,6 +17,7 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef(null);
   const router = useRouter(); // Always call useRouter unconditionally
 
@@ -35,6 +36,18 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Fermer le menu mobile quand on redimensionne vers desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handleDropdownClick = (index, event) => {
     event.preventDefault();
     setOpenDropdown(openDropdown === index ? null : index);
@@ -46,6 +59,19 @@ export default function Navbar() {
       router.push('/contact');
     } else {
       setIsContactOpen(true); // Fallback to modal if router isn't ready
+    }
+    // Fermer le menu mobile après clic
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleMobileMenuItemClick = (item, index, e) => {
+    if (item.subItems) {
+      handleDropdownClick(index, e);
+    } else if (item.name === 'CONTACTS') {
+      handleContactClick(e);
+    } else {
+      // Fermer le menu mobile pour les liens normaux
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -84,7 +110,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation Desktop */}
           <ul className="hidden md:flex gap-8 items-center">
             {menuItems.map((item, index) => (
               <li key={index} className="relative group">
@@ -133,7 +159,69 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* Bouton Hamburger Mobile */}
+          <button
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <XMarkIcon className="w-6 h-6 text-gray-700" />
+            ) : (
+              <Bars3Icon className="w-6 h-6 text-gray-700" />
+            )}
+          </button>
         </div>
+
+        {/* Menu Mobile */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200">
+            <ul className="py-4">
+              {menuItems.map((item, index) => (
+                <li key={index} className="relative">
+                  <a
+                    href={item.href || '#'}
+                    className="flex items-center justify-between px-8 py-3 text-black font-medium no-underline hover:bg-gray-50 transition-colors"
+                    onClick={(e) => handleMobileMenuItemClick(item, index, e)}
+                    aria-haspopup={item.subItems ? 'true' : 'false'}
+                    aria-expanded={openDropdown === index}
+                  >
+                    <span>{item.name}</span>
+                    {item.subItems && (
+                      <ChevronDownIcon
+                        className={`w-4 h-4 transition-transform ${
+                          openDropdown === index ? 'rotate-180' : ''
+                        }`}
+                      />
+                    )}
+                  </a>
+
+                  {item.subItems && openDropdown === index && (
+                    <ul className="bg-gray-50 border-t border-gray-200">
+                      {item.subItems.map((sub, subIndex) => (
+                        <li key={subIndex}>
+                          <a
+                            href={sub.href}
+                            className="block px-12 py-2 text-sm text-gray-700 hover:bg-gray-100 no-underline transition-colors"
+                            onClick={() => {
+                              setOpenDropdown(null);
+                              setIsMobileMenuOpen(false);
+                            }}
+                            role="menuitem"
+                          >
+                            {sub.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
 
       {/* Contact Modal */}
