@@ -134,22 +134,22 @@ function Appeloffre() {
           </p>
 
           {/* Bouton */}
-          <div className="text-center mt-6">
-            <button
-              onClick={handleLearnMore}
-              className="group relative inline-flex items-center gap-3 bg-[#8B4513] hover:bg-[#8B4513]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <span>En savoir plus</span>
-              <svg 
-                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-          </div>
+             <div className="text-center mt-6">
+        <button
+          onClick={handleLearnMore}
+          className="group relative inline-flex items-center gap-3 bg-[#8B4513] hover:bg-[#8B4513]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          <span>En savoir plus</span>
+          <svg 
+            className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
 
           {/* Signature */}
           <div className="text-center mt-8 pt-6 border-t border-gray-700/50">

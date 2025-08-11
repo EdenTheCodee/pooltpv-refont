@@ -74,25 +74,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Newsletter - repositionnée avec padding */}
-            <div className="flex flex-col items-start text-left md:pl-6">
-              <h4 className="text-xl font-semibold mb-4 text-left w-full">Newsletter</h4>
-              <div className="space-y-4 text-sm w-full">
-                <input
-                  type="email"
-                  placeholder="votre@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl bg-white/20 backdrop-blur-sm text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all"
-                />
-                <button
-                  onClick={handleSubmit}
-                  className="w-full bg-white/20 backdrop-blur-sm text-white font-semibold py-2 rounded-xl border border-white/30 hover:bg-white/30 hover:scale-105 transition-all duration-300"
-                >
-                  S'abonner
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>

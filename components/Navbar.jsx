@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 const menuItems = [
   { name: 'ACCUEIL', href: '/' },
   { name: 'À PROPOS', href: 'About'  },
-  { name: 'NOS MEMBRES', href: 'membre' },
+  { name: 'NOS PARTENAIRES', href: 'membre' },
   { name: 'ACTUALITES', href: 'actualite' },
   {name: 'CONTACTS',href: 'contact',},
 ];

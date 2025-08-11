@@ -4,10 +4,9 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Footer from "../components/Footer"; // Updated path to relative
 import About from "../components/About";
-import Contact from "../components/Contact";
 import Membres from "../components/Membres" ;
-import Actuality from "../components/Actuality" ;
 import Appeloffre from "../components/Appeloffre" ;
+import Navigation from "../components/Navigation"; // Updated path to relative
 
 
 
@@ -17,10 +16,10 @@ const Home: React.FC = () => {
             <Header />
             <About />
             <Navbar />
-            <Contact />
+           <Navigation />
             <Membres />
             <Appeloffre />
-            <Actuality />
+          
         </>
     );
 };
