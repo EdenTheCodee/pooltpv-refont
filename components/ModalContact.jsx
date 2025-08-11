@@ -34,46 +34,7 @@ export default function ModalContact({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Formulaire de contact */}
-          <form className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-300">Nom</label>
-              <input
-                type="text"
-                placeholder="Votre nom"
-                className="w-full p-2 rounded border border-gray-600 bg-black text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-300">Email</label>
-              <input
-                type="email"
-                placeholder="Votre email"
-                className="w-full p-2 rounded border border-gray-600 bg-black text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-300">Téléphone</label>
-              <input
-                type="tel"
-                placeholder=" +225 XX XX XX XX "
-                className="w-full p-2 rounded border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-300">Message</label>
-              <textarea
-                placeholder="Comment pouvons-nous vous aider ?"
-                className="w-full p-2 rounded border border-gray-600 bg-black text-white h-24 resize-none focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#442108] hover:bg-blue-700 text-white font-semibold py-2 rounded transition"
-            >
-              Envoyer
-            </button>
-          </form>
+   
         </div>
       </div>
     </div>

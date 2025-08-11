@@ -5,18 +5,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const membresPrincipaux = [
-  { name: 'M. Koné Ibrahim', role: 'Directeur du Pool TPV', photo: '/images/PINTEREST.jpg' },
-  { name: 'Mme Toure Awa', role: 'Responsable des Sinistres Auto', photo: '/images/photoPRO.jpg' },
-  { name: 'M. N’Guessan Hervé', role: 'Chef Comptable', photo: '/images/PHOTOPRO2.jpg' },
+  {  photo: '/images/sunuLogo.png' },
+  {  photo: '/images/atlantique.png' },
+  {  photo: '/images/gnaAssurance.png' },
 ];
 
 const equipeSupport = [
-  { name: 'M. Traoré Souleymane', role: 'Assistant de Direction', photo: '/images/photopro5.jpg' },
-  { name: 'Mme Diabaté Aïssata', role: 'Chargée des Opérations Terrain', photo: '/images/photopro10.jpg' },
-  { name: 'Mme Yao Clarisse', role: 'Chargée de la Communication Digitale', photo: '/images/photopro6.jpg' },
-  { name: 'M. Bakayoko Idrissa', role: 'Analyste Statistiques Sinistres', photo: '/images/photopro7.jpg' },
-  { name: 'Mme Kouamé Gisèle', role: 'Assistante Administrative', photo: '/images/photopro8.jpg' },
-  { name: 'M. Coulibaly Mahamadou', role: 'Responsable Réseau & Systèmes', photo: '/images/photopro9.jpg' },
+  {  photo: '/images/leadwayLogo.png' },
+  {  photo: '/images/logoActiva.png' },
+  {  photo: '/images/logoAmsa.png' },
+  { photo: '/images/logoArlanta.png' },
+  {  photo: '/images/NSIAassurance.png' },
+  {  photo: '/images/sonamlogo.png' },
 ];
 
 export default function Membres() {
@@ -27,63 +27,56 @@ export default function Membres() {
   return (
     <div className="bg-white py-20 text-gray-800">
       <div className="container mx-auto px-6">
-        {/* Titre principal */}
         <h2 className="text-4xl font-bold mt-10 text-center mb-4" data-aos="fade-up">
-          Notre Équipe
+          Nos partenaires 
         </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-          Découvrez les femmes et les hommes qui œuvrent chaque jour pour assurer le bon fonctionnement du Pool TPV.
-        </p>
 
         {/* Membres principaux */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {membresPrincipaux.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-100 rounded-xl p-4 text-center shadow-md hover:scale-105 transition duration-300"
+              className="bg-white rounded-xl p-3 text-center shadow-md hover:scale-105 transition duration-300"
               data-aos="zoom-in"
               data-aos-delay={index * 150}
             >
-              <div className="relative w-full h-64 overflow-hidden rounded-lg mb-4">
+              <div className="relative w-full h-40 overflow-hidden rounded-lg mb-3 bg-white">
                 <Image
                   src={member.photo}
                   alt={member.name}
                   layout="fill"
-                  objectFit="cover"
-                  objectPosition="center top"
+                  objectFit="contain" // <-- Voir logo entier
+                  objectPosition="center"
                   className="rounded-lg"
                 />
               </div>
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-gray-600 text-sm mt-1">{member.role}</p>
+               {/* <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-600 text-sm mt-1">{member.role}</p>*/}
             </div>
           ))}
         </div>
 
         {/* Équipe support */}
-        <h3 className="text-2xl font-bold mt-20 mb-6 text-center" data-aos="fade-up" data-aos-delay="200">
-          Équipe de Soutien
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
           {equipeSupport.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition"
+              className="bg-white border border-gray-200 rounded-xl p-3 text-center shadow-sm hover:shadow-md transition"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="relative w-full h-60 overflow-hidden rounded-lg mb-3">
+              <div className="relative w-full h-36 overflow-hidden rounded-lg mb-2 bg-white">
                 <Image
-                  src={member.photo}
-                  alt={member.name}
+                    src={member.photo}
+                   alt={member.name}
                   layout="fill"
-                  objectFit="cover"
-                  objectPosition="center top"
+                  objectFit="contain" // <-- Voir logo entier
+                  objectPosition="center"
                   className="rounded-lg"
                 />
               </div>
-              <h4 className="text-lg font-medium">{member.name}</h4>
-              <p className="text-gray-500 text-sm">{member.role}</p>
+              {/* <h4 className="text-base font-medium">{member.name}</h4>*/}
+              {/* <p className="text-gray-500 text-xs">{member.role}</p>*/}
             </div>
           ))}
         </div>
