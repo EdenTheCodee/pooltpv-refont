@@ -43,7 +43,7 @@ export default function Membres() {
               <div className="relative w-full h-40 overflow-hidden rounded-lg mb-3 bg-white">
                 <Image
                   src={member.photo}
-                  alt={member.name}
+                  alt={`Membre ${index + 1}`}
                   layout="fill"
                   objectFit="contain" // <-- Voir logo entier
                   objectPosition="center"
@@ -68,7 +68,7 @@ export default function Membres() {
               <div className="relative w-full h-36 overflow-hidden rounded-lg mb-2 bg-white">
                 <Image
                     src={member.photo}
-                   alt={member.name}
+                    alt={`Membre Support ${index + 1}`}
                   layout="fill"
                   objectFit="contain" // <-- Voir logo entier
                   objectPosition="center"
