@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import { useState, useEffect, useRef } from 'react';
-import ModalContact from './ModalContact'; 
 import { useRouter } from 'next/navigation';
 
 const menuItems = [
@@ -224,8 +223,7 @@ export default function Navbar() {
         )}
       </nav>
 
-      {/* Contact Modal */}
-      <ModalContact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+     
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Appeloffre() {
   const handleLearnMore = () => {
-    window.open('/offres-emploi', '_blank');
+    window.open('/actualite', 'appelcandidat');
   };
 
   return (
@@ -139,7 +139,7 @@ function Appeloffre() {
           onClick={handleLearnMore}
           className="group relative inline-flex items-center gap-3 bg-[#8B4513] hover:bg-[#8B4513]/90 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
-          <span>En savoir plus</span>
+          <span href='actualite'>En savoir plus</span>
           <svg 
             className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
             fill="none" 
