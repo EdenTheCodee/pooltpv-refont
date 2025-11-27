@@ -6,7 +6,7 @@ import Footer from "../components/Footer"; // Updated path to relative
 import About from "../components/About";
 import Membres from "../components/Membres" ;
 import Appeloffre from "../components/Appeloffre" ;
-import Navigation from "../components/Navigation"; // Updated path to relative
+
 
 
 
@@ -16,7 +16,6 @@ const Home: React.FC = () => {
             <Header />
             <About />
             <Navbar />
-           <Navigation />
             <Membres />
             <Appeloffre />
           
